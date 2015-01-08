@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'upmin-admin'
 gem 'cancancan', '~> 1.10'
+gem 'decent_exposure', '~> 2.3.2'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

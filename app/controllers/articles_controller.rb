@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   respond_to :html
 
   def index
-    @articles = Article.all
+    @articles = Article.where(user: current_user)
     respond_with(@articles)
   end
 

@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
     flash[:notice] = 'Article was successfully created.' if @article.save
     respond_with(@article)
   end
@@ -42,6 +43,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :content, :summary, :keywords, :user_id)
+      params.require(:article).permit(:title, :content, :summary, :keywords)
     end
 end

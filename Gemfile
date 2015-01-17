@@ -1,23 +1,33 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
-gem 'rails', '4.1.4'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
+
+gem 'rails', '4.2.0'
+gem 'pg', '~> 0.18.1'
+
+# --- assets ---
+gem 'sass-rails', '~> 5.0.1'
+gem 'uglifier', '~> 2.6.1'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jquery-rails', '~> 4.0.3'
+gem 'turbolinks', '~> 2.5.3'
 gem 'bootstrap-sass'
+
+# --- utilities ---
+gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'haml-rails'
-gem 'pg'
-gem 'simple_form'
-gem 'therubyracer', :platform=>:ruby
+gem 'therubyracer', platform: :ruby
 gem 'upmin-admin'
-gem 'decent_exposure', '~> 2.3.2'
 gem 'rolify'
+
+# --- views ---
+gem 'simple_form', '~> 3.1.0'
+gem 'slim-rails', '~> 3.0.1'
+
+# --- controllers ---
+gem 'decent_exposure', '~> 2.3.2'
+gem 'decent_decoration', '~> 0.0.6'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -31,12 +41,15 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
+  gem 'spring'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'

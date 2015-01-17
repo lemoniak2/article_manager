@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150112162747) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: true do |t|
+  create_table "articles", force: :cascade do |t|
     t.text     "title"
     t.text     "content"
     t.text     "summary"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150112162747) do
   add_index "articles", ["reviewer_id"], name: "index_articles_on_reviewer_id", using: :btree
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
-  create_table "reviews", force: true do |t|
+  create_table "reviews", force: :cascade do |t|
     t.integer  "article_id"
     t.text     "comment"
     t.integer  "decision"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150112162747) do
 
   add_index "reviews", ["article_id"], name: "index_reviews_on_article_id", using: :btree
 
-  create_table "roles", force: true do |t|
+  create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.integer  "resource_id"
     t.string   "resource_type"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150112162747) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150112162747) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "users_roles", id: false, force: true do |t|
+  create_table "users_roles", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "role_id"
   end

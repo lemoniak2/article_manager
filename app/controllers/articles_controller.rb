@@ -1,48 +1,41 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-
-  respond_to :html
+  expose(:article, attributes: :article_params)
+  expose(:review) { new_review }
 
   def index
+    @review_articles = Article.where(reviewer_id: current_user.id)
     @articles = Article.where(user: current_user)
-    respond_with(@articles)
-  end
-
-  def show
-    respond_with(@article)
-  end
-
-  def new
-    @article = Article.new
-    respond_with(@article)
-  end
-
-  def edit
   end
 
   def create
-    @article = Article.new(article_params)
-    @article.user_id = current_user.id
-    flash[:notice] = 'Article was successfully created.' if @article.save
-    respond_with(@article)
+    article.user_id = current_user.id
+    if article.save
+      flash[:notice] = 'Article was successfully created.'
+      redirect_to articles_path
+    end
   end
 
   def update
-    flash[:notice] = 'Article was successfully updated.' if @article.update(article_params)
-    respond_with(@article)
+    if article.update(article_params)
+      flash[:notice] = 'Article was successfully updated.'
+      redirect_to articles_path
+    end
   end
 
   def destroy
-    @article.destroy
-    respond_with(@article)
+    article.destroy
+    redirect_to articles_path
   end
 
   private
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    def article_params
-      params.require(:article).permit(:title, :content, :summary, :keywords)
-    end
+  def new_review
+    review = Review.new
+    review.article_id = article.id
+    review
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :content, :summary, :keywords, :reviewer_id)
+  end
 end

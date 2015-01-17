@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-  enum role: [:user, :moderator, :author, :reviewer, :admin]
+  rolify
+  #enum role: [:user, :moderator, :author, :reviewer, :admin]
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
-    self.role ||= :user
+    self.add_role :user
   end
 
   # Include default devise modules. Others available are:

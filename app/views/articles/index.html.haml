@@ -4,10 +4,6 @@
   %thead
     %tr
       %th Title
-      %th Content
-      %th Summary
-      %th Keywords
-      %th User
       %th
       %th
       %th
@@ -16,14 +12,16 @@
     - @articles.each do |article|
       %tr
         %td= article.title
-        %td= article.content
-        %td= article.summary
-        %td= article.keywords
-        %td= article.user
+        %td
+          - if current_user.has_role? :moderator
+            = simple_form_for(article) do |f|
+              .form-inputs
+                = f.select(:reviewer_id, User.with_role(:reviewer).map {|user| [user.email, user.id]})
+                = f.submit 'Set reviewer', :class => 'button-xs'
         %td= link_to 'Show', article
         %td= link_to 'Edit', edit_article_path(article)
         %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Article', new_article_path
+- if current_user.has_role? :author
+  = link_to 'New Article', new_article_path

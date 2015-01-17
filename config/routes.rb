@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :articles
+  resources :articles do
+    resources :reviews
+  end
 
   mount Upmin::Engine => '/admin'
   root to: 'visitors#index'

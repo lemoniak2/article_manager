@@ -2,20 +2,43 @@
 
 %p
   %b Title:
-  = @article.title
+  = article.title
 %p
   %b Content:
-  = @article.content
+  = article.content
 %p
   %b Summary:
-  = @article.summary
+  = article.summary
 %p
   %b Keywords:
-  = @article.keywords
-%p
-  %b User:
-  = @article.user
+  = article.keywords
 
-= link_to 'Edit', edit_article_path(@article)
+- if current_user.has_role? :author
+  = link_to 'Edit', edit_article_path(article)
+- if current_user.has_role? :reviewer && article.no_review && review.article.reviewer_id == current_user.id
+  %br
+  %b
+    %h3
+      Add review:
+  %br
+  = simple_form_for review, url: article_reviews_path(article) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.input :comment
+      = f.select(:decision, Review.decisions.keys.map {|decision| [decision.titleize, decision]})
+
+    .form-actions
+      = f.button :submit
+- if article.review.present?
+  %br
+  %br
+  %p
+    %b Your comment
+    = article.review.comment
+  %p
+    %b Decision
+    = article.review.decision.titleize
+
 \|
 = link_to 'Back', articles_path

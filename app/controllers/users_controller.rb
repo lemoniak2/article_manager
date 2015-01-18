@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  #before_filter :authenticate_user!
-  #before_filter :admin_only, :except => :show
+  before_filter :authenticate_user!
+  before_filter :admin_only
+  expose(:roles) { Role.all }
+  expose(:role) { Role.new }
 
   def index
     @users = User.all
@@ -33,8 +35,8 @@ class UsersController < ApplicationController
   private
 
   def admin_only
-    unless current_user.admin?
-      redirect_to :back, :alert => "Access denied."
+    unless current_user.has_role? :admin
+      redirect_to :root, :alert => "Access denied."
     end
   end
 

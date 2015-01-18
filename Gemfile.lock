@@ -332,6 +332,7 @@ DEPENDENCIES
   jquery-rails (~> 4.0.3)
   launchy
   pg (~> 0.18.1)
+  pry
   quiet_assets
   rails (= 4.2.0)
   rails_layout

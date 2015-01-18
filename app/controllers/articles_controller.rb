@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user!
   expose(:article, attributes: :article_params)
   expose(:review) { new_review }
 

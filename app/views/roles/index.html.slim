@@ -1,0 +1,17 @@
+.container
+  .row
+    h3
+      'Roles
+    .column
+      table class='table'
+        tbody
+          - roles.each do |role|
+            tr
+              td
+                = role.name
+              td
+                = link_to 'Delete role', role, method: :delete, data: { confirm: 'Are you sure?' }
+      .add_role
+        = simple_form_for(role) do |f|
+          = f.input :name
+          = f.submit 'Add role'

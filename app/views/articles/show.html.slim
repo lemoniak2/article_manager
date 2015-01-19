@@ -1,26 +1,25 @@
-%p#notice= notice
+p#notice= notice
 
-%p
-  %b Title:
+p
+  b Title:
   = article.title
-%p
-  %b Summary:
+p
+  b Summary:
   = article.summary
-%p
-  %b Keywords:
+p
+  b Keywords:
   = article.keywords
-%p
-  %b Article content file
+p
+  b Article content file
   = link_to 'Click here', article.article_content.url
 
 - if current_user.has_role? :author
   = link_to 'Edit', edit_article_path(article)
 - if current_user.has_role?(:reviewer) && article.no_review && review.article.reviewer_id == current_user.id
-  %br
-  %b
-    %h3
-      Add review:
-  %br
+  br
+  b
+    h3 Add review:
+  br
   = simple_form_for review, url: article_reviews_path(article) do |f|
     = f.error_notification
 
@@ -31,14 +30,13 @@
     .form-actions
       = f.button :submit
 - if article.review.present?
-  %br
-  %br
-  %p
-    %b Your comment
+  br
+  br
+  p
+    b Your comment
     = article.review.comment
-  %p
-    %b Decision
+  p
+    b Decision
     = article.review.decision.titleize
 
-\|
 = link_to 'Back', articles_path

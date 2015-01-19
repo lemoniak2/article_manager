@@ -1,0 +1,40 @@
+h1 Your articles
+
+table
+  thead
+    tr
+      th Title
+      th
+      th
+      th
+  - if current_user.has_role? :author
+    tbody
+      - @articles.each do |article|
+        tr
+          td= article.title
+          td
+            - if current_user.has_role? :moderator
+              = simple_form_for(article) do |f|
+                = f.input :reviewer_id, collection: User.with_role(:reviewer), label: false
+                td
+                  = f.submit 'Set reviewer', :class => 'button-xs'
+          td= link_to 'Show', article
+          td= link_to 'Edit', edit_article_path(article)
+          td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
+br
+  = link_to 'New Article', new_article_path
+
+- if current_user.has_role? :reviewer
+  h1 Articles to review
+  table
+    thead
+      tr
+        th Title
+        th
+        th
+        th
+    tbody
+      - @review_articles.each do |article|
+        tr
+          td= article.title
+          td= link_to 'Show', article

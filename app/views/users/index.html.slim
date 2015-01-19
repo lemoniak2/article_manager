@@ -1,10 +1,10 @@
 .container
   .row
-    %h3
+    h3
       Users
     .column
-      %table(class='table')
-        %tbody
+      table class='table'
+        tbody
           - @users.each do |user|
-            %tr
+            tr
               = render user

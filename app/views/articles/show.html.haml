@@ -4,18 +4,18 @@
   %b Title:
   = article.title
 %p
-  %b Content:
-  = article.content
-%p
   %b Summary:
   = article.summary
 %p
   %b Keywords:
   = article.keywords
+%p
+  %b Article content file
+  = link_to 'Click here', article.article_content.url
 
 - if current_user.has_role? :author
   = link_to 'Edit', edit_article_path(article)
-- if current_user.has_role? :reviewer && article.no_review && review.article.reviewer_id == current_user.id
+- if current_user.has_role?(:reviewer) && article.no_review && review.article.reviewer_id == current_user.id
   %br
   %b
     %h3

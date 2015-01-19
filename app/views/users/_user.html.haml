@@ -6,7 +6,7 @@
     = link_to 'X', user_role_path(user, role), method: :delete, data: { confirm: 'Are you sure?' }
 %td
   = simple_form_for(role, url: user_roles_path(user)) do |f|
-    = f.input :name, collection: roles, value_method: :name
+    = f.input :name, collection: roles, value_method: :name, label: false
     = f.submit 'Add role', class: 'button-xs'
 %td
   = link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless user == current_user

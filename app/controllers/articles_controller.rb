@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    article.article_content = params[:article][:article_content]
     article.user_id = current_user.id
     if article.save
       flash[:notice] = 'Article was successfully created.'

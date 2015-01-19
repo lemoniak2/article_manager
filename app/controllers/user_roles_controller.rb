@@ -5,10 +5,6 @@ class UserRolesController < ApplicationController
     redirect_to users_path
   end
 
-  def update
-
-  end
-
   def destroy
     role = Role.find(params[:id])
     user = User.find(params[:user_id])

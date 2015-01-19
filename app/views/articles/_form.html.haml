@@ -3,9 +3,9 @@
 
   .form-inputs
     = f.input :title
-    = f.input :content
     = f.input :summary
     = f.input :keywords
+    = f.input :article_content, as: :file
 
   .form-actions
     = f.button :submit

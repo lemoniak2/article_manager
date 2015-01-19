@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article.article_content = params[:article][:article_content]
     article.user_id = current_user.id
     if article.save
       flash[:notice] = 'Article was successfully created.'
@@ -38,6 +37,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content, :summary, :keywords, :reviewer_id)
+    params.require(:article).permit(:title, :content, :summary, :keywords, :reviewer_id, :article_content)
   end
 end

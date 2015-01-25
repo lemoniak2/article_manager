@@ -258,7 +258,7 @@ th {
   }
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: #ffffff !important;
   }
   .table-bordered th,
   .table-bordered td {
@@ -1181,7 +1181,7 @@ a.text-danger:hover {
   color: #e6e6e6;
 }
 .bg-primary {
-  color: #fff;
+  color: #ffffff;
   background-color: #2780e3;
 }
 a.bg-primary:hover {
@@ -2723,8 +2723,8 @@ select[multiple].form-group-lg .form-control {
   min-height: 32px;
 }
 .form-horizontal .form-group {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {

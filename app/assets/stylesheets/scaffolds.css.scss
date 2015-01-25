@@ -50,6 +50,8 @@ a {
 }
 a:active,
 a:hover {
+  background-color: transparent;
+  text-decoration: underline;
   outline: 0;
 }
 abbr[title] {
@@ -2420,6 +2422,9 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .radio,
 .checkbox {

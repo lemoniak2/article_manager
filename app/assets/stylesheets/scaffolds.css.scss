@@ -2428,6 +2428,13 @@ input[type="search"] {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.checkbox-right {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
 .radio label,
 .checkbox label {
   min-height: 21px;
@@ -2723,8 +2730,9 @@ select[multiple].form-group-lg .form-control {
   min-height: 32px;
 }
 .form-horizontal .form-group {
-  margin-left: 15%;
-  margin-right: 15%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
@@ -6083,6 +6091,9 @@ button.close {
 .panel-body:after,
 .modal-footer:after {
   clear: both;
+}
+.fh-right{
+  float: right;
 }
 .center-block {
   display: block;

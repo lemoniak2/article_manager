@@ -1,6 +1,8 @@
 <form class="form-horizontal">
   <div class="form-group">
-    <h3>Edit <%= resource_name.to_s.humanize %></h3>
+    <div class="form-group">
+      <h3>Edit <%= resource_name.to_s.humanize %></h3>
+    </div>
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
     <%= devise_error_messages! %>
     <div class="form-group">

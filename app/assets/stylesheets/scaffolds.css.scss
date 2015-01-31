@@ -206,6 +206,7 @@ th {
   a,
   a:visited {
     text-decoration: underline;
+    color: #ffffff;
   }
   a[href]:after {
     content: " (" attr(href) ")";
@@ -2763,6 +2764,7 @@ select[multiple].form-group-lg .form-control {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
+  text-decoration-color: #ffffff;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
@@ -3120,6 +3122,10 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  margin-top: 2px;
   padding: 18px 30px;
   font-size: 19px;
   line-height: 1.33;
@@ -3127,6 +3133,10 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-sm,
 .btn-group-sm > .btn {
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  margin-top: 2px;
   padding: 5px 10px;
   font-size: 13px;
   line-height: 1.5;
@@ -3134,6 +3144,10 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-xs,
 .btn-group-xs > .btn {
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  margin-top: 2px;
   padding: 1px 5px;
   font-size: 13px;
   line-height: 1.5;

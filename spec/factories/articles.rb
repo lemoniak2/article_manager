@@ -3,6 +3,6 @@ FactoryGirl.define do
     sequence(:title) { |n| "Article#{n}" }
     sequence(:summary) { |n| "Article#{n}" }
     keywords '#keywordx'
-    user association
+    user { create(:user) }
   end
 end

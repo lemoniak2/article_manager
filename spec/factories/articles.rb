@@ -1,10 +1,8 @@
 FactoryGirl.define do
   factory :article do
-    title "MyText"
-content "MyText"
-summary "MyText"
-keywords "MyString"
-user nil
+    sequence(:title) { |n| "Article#{n}" }
+    sequence(:summary) { |n| "Article#{n}" }
+    keywords '#keywordx'
+    user association
   end
-
 end

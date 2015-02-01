@@ -1,10 +1,10 @@
 .form-group
-  h1 Your articles
+  h1= t('article.your_articles')
 
   table
     thead
       tr
-        th Title
+        th= t('article.title')
         th
         th
         th
@@ -19,19 +19,19 @@
                   = f.input :reviewer_id, collection: User.with_role(:reviewer), label: false
                   td
                     dropdown-toggle
-                    =f.submit 'Set reviewer', :class => 'btn btn-primary btn-xs'
-            td= link_to 'Show', article, class:'btn btn-primary btn-xs'
-            td= link_to 'Edit', edit_article_path(article), class:'btn btn-primary btn-xs'
-            td= link_to 'Destroy', article, method: :delete, data: {confirm: 'Are you sure?'}, class:'btn btn-primary btn-xs'
+                    =f.submit t('article.set_reviewer'), :class => 'btn btn-primary btn-xs'
+            td= link_to t('article.show'), article, class:'btn btn-primary btn-xs'
+            td= link_to t('article.edit'), edit_article_path(article), class:'btn btn-primary btn-xs'
+            td= link_to t('article.destroy'), article, method: :delete, data: {confirm: t('article.popup.are_you_sure')}, class:'btn btn-primary btn-xs'
   br
-    = link_to 'New Article', new_article_path, class: 'btn btn-success'
+    = link_to t('article.new'), new_article_path, class: 'btn btn-success'
 
   - if current_user.has_role? :reviewer
-    h1 Articles to review
+    h1= t('article.articles_to_review')
     table
       thead
         tr
-          th Title
+          th= t('article.title')
           th
           th
           th
@@ -39,4 +39,4 @@
         - @review_articles.each do |article|
           tr
             td= article.title
-            td= link_to 'Show', article, class:'btn btn-info btn-xs'
+            td= link_to t('article.show'), article, class:'btn btn-info btn-xs'

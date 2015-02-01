@@ -1,5 +1,21 @@
 en:
   article:
     show: 'Show'
+    edit: 'Edit'
+    destroy: 'Destroy'
     back: 'Back'
+    new: 'New article'
+    click_here: 'Click here'
     editing_article: 'Editing article'
+    your_articles: 'Your articles'
+    articles_to_review: 'Articles to review'
+    add_review: 'Add review'
+    your_comment: 'Your comment'
+    decision: 'Decision'
+    title: 'Title'
+    summary: 'Summary'
+    keywords: 'Keywords'
+    set_reviewer: 'Set reviewer'
+    content_file: 'Article content file'
+    popup:
+      are_you_sure: 'Are you sure?'

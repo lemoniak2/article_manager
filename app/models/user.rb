@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   rolify
-  #enum role: [:user, :moderator, :author, :reviewer, :admin]
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role

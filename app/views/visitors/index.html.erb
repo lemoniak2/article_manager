@@ -1,6 +1,6 @@
 <form class="form-horizontal">
   <div class="form-group">
-    <h3>Welcome</h3>
-    <p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+    <h3><%= t('visitiors.welcome') %></h3>
+    <p><%= link_to t('user.users'), users_path %> <%= User.count %> <%= t('visitiors.registered') %></p>
   </div>
 </form>

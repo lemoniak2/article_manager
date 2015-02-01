@@ -1,4 +1,6 @@
 en:
+  popup:
+    are_you_sure: 'Are you sure?'
   article:
     show: 'Show'
     edit: 'Edit'
@@ -19,3 +21,16 @@ en:
     content_file: 'Article content file'
     popup:
       are_you_sure: 'Are you sure?'
+  role:
+    delete: 'Delete role'
+    add: 'Add role'
+    roles: 'Roles'
+  user:
+    user: 'User'
+    users: 'Users'
+    name: 'Name'
+    email: 'Email'
+  visitiors:
+    welcome: 'Welcome'
+    registered: 'registered'
+

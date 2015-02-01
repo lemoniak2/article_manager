@@ -6,10 +6,10 @@
        - user.roles.each do |role|
          = role.name
          = ' '
-         = link_to 'X', user_role_path(user, role), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default btn-xs'
+         = link_to 'X', user_role_path(user, role), method: :delete, data: {confirm: t('popup.are_you_sure')}, class: 'btn btn-default btn-xs'
      td
        = simple_form_for(role, url: user_roles_path(user)) do |f|
          =f.input :name, class:'select.form-control.input-sm', collection: roles, value_method: :name, label: false
          td
-           = f.submit 'Add role', class: 'btn btn-warning btn-xs'
-           = link_to("Delete user", user_path(user), data: {confirm: "Are you sure?"}, method: :delete, class: 'btn btn-danger btn-xs') unless user == current_user
+           = f.submit t('role.add'), class: 'btn btn-warning btn-xs'
+           = link_to("Delete user", user_path(user), data: {confirm: t('popup.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-xs') unless user == current_user

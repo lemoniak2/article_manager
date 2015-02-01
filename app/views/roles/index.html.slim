@@ -1,7 +1,6 @@
 .container
   .row
-    h3
-      'Roles
+    h3= t('role.roles')
     .column
       table class='table'
         tbody
@@ -10,8 +9,8 @@
               td
                 = role.name
               td
-                = link_to 'Delete role', role, method: :delete, data: { confirm: 'Are you sure?' }
+                = link_to t('role.delete'), role, method: :delete, data: { confirm: t('popup.are_you_sure') }
       .add_role
         = simple_form_for(role) do |f|
           = f.input :name
-          = f.submit 'Add role'
+          = f.submit t('role.add')

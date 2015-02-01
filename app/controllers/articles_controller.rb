@@ -11,14 +11,14 @@ class ArticlesController < ApplicationController
   def create
     article.user_id = current_user.id
     if article.save
-      flash[:notice] = 'Article was successfully created.'
+      flash[:notice] = t('article.successfully_created')
       redirect_to articles_path
     end
   end
 
   def update
     if article.update(article_params)
-      flash[:notice] = 'Article was successfully updated.'
+      flash[:notice] = t('article.successfully_updated')
       redirect_to articles_path
     end
   end

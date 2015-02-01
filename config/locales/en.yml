@@ -19,6 +19,8 @@ en:
     keywords: 'Keywords'
     set_reviewer: 'Set reviewer'
     content_file: 'Article content file'
+    successfully_created: 'Article was successfully created.'
+    successfully_updated: 'Article was successfully updated.'
     popup:
       are_you_sure: 'Are you sure?'
   role:
@@ -30,6 +32,14 @@ en:
     users: 'Users'
     name: 'Name'
     email: 'Email'
+    access_denied: 'Access denied.'
+    deleted: 'User deleted.'
+    update:
+      success: 'User updated.'
+      denied: 'Unable to update user.'
+  review:
+    successfully_created: 'Review was successfully created.'
+    successfully_updated: 'Review was successfully updated.'
   visitiors:
     welcome: 'Welcome'
     registered: 'registered'

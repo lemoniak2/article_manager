@@ -1,0 +1,45 @@
+pl:
+  popup:
+    are_you_sure: 'Jesteś pewny?'
+  article:
+    show: 'Pokaż'
+    edit: 'Edytuj'
+    destroy: 'Usuń'
+    back: 'Powrót'
+    new: 'Nowy artykuł'
+    click_here: 'Kliknij tutaj'
+    editing_article: 'Edytuj artykuł'
+    your_articles: 'Twoje artykuły'
+    articles_to_review: 'Artykuły do recenzji'
+    add_review: 'Dodaj recenzję'
+    your_comment: 'Twój komentarz'
+    decision: 'Decyzja'
+    title: 'Tytuł'
+    summary: 'Podsumowanie'
+    keywords: 'Słowa kluczowe'
+    set_reviewer: 'Ustaw recenzenta'
+    content_file: 'Zawartość artykułu'
+    successfully_created: 'Artykuł został utworzony.'
+    successfully_updated: 'Artykuł został pomyślnie zaktualizowany.'
+    popup:
+      are_you_sure: 'Jesteś pewny?'
+  role:
+    delete: 'Usuń rolę'
+    add: 'Dodaj rolę'
+    roles: 'Role'
+  user:
+    user: 'Użytkownik'
+    users: 'Użytkownicy'
+    name: 'Nazwa'
+    email: 'Email'
+    access_denied: 'Odmowa dostępu.'
+    deleted: 'Użytkownik został usunięty.'
+    update:
+      success: 'Użytkownik został zaktualizowany.'
+      denied: 'Użytkownik nie może zostać zaktualizowany.'
+  review:
+    successfully_created: 'Recenzja została utworzona.'
+    successfully_updated: 'Recenzja została zaktualizowana.'
+  visitiors:
+    welcome: 'Witaj'
+    registered: 'Zarejestrowany'
